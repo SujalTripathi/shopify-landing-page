@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astronaut Galaxy Projector</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f8f9fa; color: #333; line-height: 1.6; }
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    .hero { text-align: center; padding: 30px 20px; background: #000; color: #fff; }
+    .hero img { max-width: 300px; }
+    .hero h1 { font-size: 2em; margin-top: 15px; }
+    .hero p { font-size: 1.1em; color: #ccc; }
+    .highlights, .benefits, .reviews, .trust, .faq { padding: 30px 20px; }
+    .section-title { font-size: 1.5em; margin-bottom: 15px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .product-images img { max-width: 100%; border-radius: 8px; }
+    .cta { position: fixed; bottom: 20px; right: 20px; background: #ff6a00; color: #fff; padding: 12px 20px; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .faq-item { margin-bottom: 15px; }
+    .faq-item h4 { margin-bottom: 5px; }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.5em; }
+      .cta { font-size: 0.9em; padding: 10px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+        
+      <img src="Product.png" alt="Astronaut Galaxy Projector">
+      <h1>Bring the Galaxy Indoors</h1>
+      <p>360° Rotating Nebula Star Projector with Remote Control, Timer & Adjustable Head – Perfect for Bedrooms, Gaming Rooms, and Parties.</p>
+    </section>
+
+    <section class="highlights">
+      <h2 class="section-title">Product Highlights</h2>
+      <div class="grid">
+        <div class="card">🌌 360° Rotating Galaxy Projection</div>
+        <div class="card">🧑‍🚀 Cute Astronaut Design with Adjustable Head</div>
+        <div class="card">🎮 Remote Controlled + Timer Feature</div>
+        <div class="card">🔋 USB Powered – Easy & Safe to Use</div>
+      </div>
+    </section>
+
+    <section class="product-images">
+      <h2 class="section-title">Visual Showcase</h2>
+      <div class="grid">
+        <img src="Visual.png" alt="Galaxy Projector">
+        <img src="Astro.png" alt="Astronaut Design">
+      </div>
+    </section>
+
+    <section class="benefits">
+      <h2 class="section-title">Why You'll Love It</h2>
+      <ul>
+        <li>Transforms your space into a dreamy galaxy</li>
+        <li>Perfect gift for kids, gamers, or space lovers</li>
+        <li>Remote makes operation easy and convenient</li>
+        <li>Great for relaxation, parties, and sleep ambiance</li>
+      </ul>
+    </section>
+
+    <section class="reviews">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="grid">
+        <div class="card">"Absolutely stunning! My son falls asleep looking at the stars every night." – Priya M.</div>
+        <div class="card">"Best décor addition to my gaming room. Gives amazing vibes!" – Rahul K.</div>
+        <div class="card">"Super easy to use and looks premium." – Neha T.</div>
+      </div>
+    </section>
+
+    <section class="trust">
+      <h2 class="section-title">Shop With Confidence</h2>
+      <div class="grid">
+        <div class="card">🔐 Secure Payments</div>
+        <div class="card">🚚 Fast Delivery</div>
+        <div class="card">✅ 7-Day Return Guarantee</div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2 class="section-title">FAQs</h2>
+      <div class="faq-item">
+        <h4>Is the projector rechargeable?</h4>
+        <p>No, it works via USB power supply.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Does it come with a remote?</h4>
+        <p>Yes, it includes a remote for easy control of modes and timers.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is it safe for kids?</h4>
+        <p>Yes, it's made from safe materials and emits soft ambient light.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I change the light colors?</h4>
+        <p>Yes, you can switch between different colors and modes.</p>
+      </div>
+    </section>
+  </div>
+  <section class="limited-offer" style="text-align:center; margin: 2rem auto;">
+    <h2 style="color: #facc15;">⏳ Limited Time Offer!</h2>
+    <p>Get an exclusive discount before the timer runs out:</p>
+    <div id="countdown" style="font-size: 1.5rem; font-weight: bold;"></div>
+  </section>
+  <script>
+    const countdown = document.getElementById('countdown');
+    const endTime = new Date().getTime() + 3600000; // 1 hour from now
+  
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const timeLeft = endTime - now;
+      if (timeLeft < 0) {
+        countdown.innerHTML = "Offer Expired!";
+        return;
+      }
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      countdown.innerHTML = `${minutes}m ${seconds}s remaining`;
+    };
+  
+    setInterval(updateTimer, 1000);
+  </script>
+  
+  <button class="cta">Buy Now</button>
+</body>
+</html>
